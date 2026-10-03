@@ -1,0 +1,40 @@
+# Mr. ADN — Desktop Assistant Dependencies
+# Python >= 3.10 required (3.12+ recommended)
+
+# ── UI / Frontend ──────────────────────────────────────────────
+PyQt6>=6.7.0                    # Main UI framework
+PyQt6-Qt6>=6.7.0
+PyQt6-sip>=13.8.0
+
+# ── AI / LLM Backend ──────────────────────────────────────────
+google-genai>=2.3.0             # Google Gemini API (Interactions SDK)
+openai>=1.40.0                  # OpenAI-compatible endpoint (optional)
+httpx>=0.27.0                   # Async HTTP (used by providers)
+
+# ── Hotkeys / Input ───────────────────────────────────────────
+pynput>=1.7.7                   # Global keyboard/mouse hotkeys
+
+# ── Win32 / Windows Telemetry ─────────────────────────────────
+pywin32>=306                    # Windows API (active window, registry, monitors)
+psutil>=5.9.0                   # Process tracking for window telemetry
+pygetwindow>=0.0.9              # High-level window management helper
+
+# ── Screen Capture ────────────────────────────────────────────
+Pillow>=10.4.0                  # Image processing, region capture
+mss>=9.0.1                      # Fast multi-monitor screenshot
+
+# ── Audio / Voice Input ───────────────────────────────────────
+sounddevice>=0.5.0              # Cross-platform audio I/O
+numpy>=1.26.0                   # Audio buffer processing
+# webrtcvad>=2.0.10             # VAD — requires MS C++ Build Tools (optional)
+#   Install manually: pip install webrtcvad  (after installing Build Tools)
+
+# ── Database / Persistence ────────────────────────────────────
+# sqlite3 is part of stdlib — no extra package needed
+
+# ── Utilities ─────────────────────────────────────────────────
+python-dotenv>=1.0.1            # Load .env files for API keys
+pydantic>=2.7.0                 # Config/data validation
+aiofiles>=24.1.0                # Async file I/O
+loguru>=0.7.2                   # Structured logging
+tenacity>=8.5.0                 # Retry logic for API calls

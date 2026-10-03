@@ -1,0 +1,41 @@
+# Mr. ADN .gitignore
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# API keys and secrets
+.env
+
+# Compiled Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data / persistence
+data/
+*.db
+*.db-journal
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# PyInstaller
+*.spec

@@ -1,0 +1,123 @@
+{
+  "_comment": "Mr. ADN — Desktop Assistant Configuration v1.0",
+  "app": {
+    "name": "Mr. ADN",
+    "version": "1.0.0",
+    "debug": false,
+    "log_level": "INFO"
+  },
+  "ui": {
+    "window": {
+      "width": 200,
+      "height": 260,
+      "opacity": 0.95,
+      "always_on_top": true,
+      "frameless": true,
+      "start_x": 100,
+      "start_y": 100,
+      "monitor_index": 0
+    },
+    "movement": {
+      "draggable": true,
+      "autonomous_drift": true,
+      "drift_interval_sec": 60,
+      "drift_max_px": 30,
+      "save_position_on_exit": true
+    },
+    "theme": {
+      "primary_color": "#00FF88",
+      "secondary_color": "#0099FF",
+      "background_color": "#0A0A1A",
+      "text_color": "#FFFFFF",
+      "bubble_color": "#1A1A3A",
+      "bubble_opacity": 0.92,
+      "font_family": "Segoe UI",
+      "font_size": 12
+    },
+    "animation": {
+      "sprite_dir": "assets/sprites",
+      "idle_fps": 8,
+      "talking_fps": 12,
+      "thinking_fps": 10,
+      "default_state": "idle"
+    },
+    "input_mode": "text",
+    "speech_bubble": {
+      "max_width": 320,
+      "max_lines": 10,
+      "auto_hide_sec": 15,
+      "stream_cursor": true
+    }
+  },
+  "hotkeys": {
+    "global_invoke": "<ctrl>+<alt>+m",
+    "screenshot_region": "<ctrl>+<alt>+s",
+    "mute_toggle": "<ctrl>+<alt>+z"
+  },
+  "telemetry": {
+    "enabled": true,
+    "poll_interval_ms": 2000,
+    "track_active_window": true,
+    "track_taskbar_windows": true,
+    "context_history_size": 20,
+    "capture_screenshot_on_invoke": false
+  },
+  "ai": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "api_key_env": "GEMINI_API_KEY",
+    "streaming": true,
+    "store_interactions": false,
+    "system_prompt": "Eres Mr. ADN, un asistente de escritorio inteligente con la personalidad del Dr. Wu de Jurassic Park: brillante, conciso y levemente sarcástico. Tienes acceso al contexto de la pantalla del usuario (ventana activa, aplicaciones abiertas) y puedes ver imágenes que el usuario comparte. Responde siempre en el idioma del usuario. Sé útil, breve y preciso.",
+    "max_tokens": 1024,
+    "temperature": 0.7,
+    "context_window_size": 10,
+    "providers": {
+      "gemini": {
+        "base_url": null,
+        "model": "gemini-3.5-flash-lite"
+      },
+      "openai": {
+        "base_url": "https://api.openai.com/v1",
+        "model": "gpt-4o-mini",
+        "api_key_env": "OPENAI_API_KEY"
+      },
+      "ollama": {
+        "base_url": "http://localhost:11434",
+        "model": "llama3.2:3b",
+        "api_key_env": null
+      }
+    }
+  },
+  "bandit": {
+    "enabled": true,
+    "algorithm": "ucb1",
+    "arms": [
+      "ignore",
+      "silence",
+      "interact"
+    ],
+    "initial_proactivity": 0.3,
+    "min_proactivity": 0.05,
+    "max_proactivity": 0.8,
+    "exploration_constant": 1.41,
+    "cooldown_after_silence_sec": 300,
+    "min_interval_between_interruptions_sec": 900
+  },
+  "persistence": {
+    "db_path": "data/mradn.db",
+    "log_dir": "data/logs",
+    "position_file": "data/position.json",
+    "autostart_enabled": false,
+    "autostart_registry_key": "MrADN"
+  },
+  "audio": {
+    "enabled": true,
+    "input_device_index": null,
+    "sample_rate": 16000,
+    "vad_threshold": 0.5,
+    "silence_timeout_ms": 1500,
+    "tts_enabled": false,
+    "tts_voice": "es-AR-ElenaNeural"
+  }
+}
